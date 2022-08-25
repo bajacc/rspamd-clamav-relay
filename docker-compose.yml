@@ -1,0 +1,10 @@
+version: '3.5'
+services:
+  rspamd-clamav-relay:
+    build: .
+    container_name: rspamd-clamav-relay
+    ports:
+      - "10025:25"
+    environment:
+      - RELAY_HOST=[127.0.0.1]:11025
+    tty: true
